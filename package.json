@@ -1,0 +1,47 @@
+{
+  "name": "turborepo-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Matt Crowder <mcrowder65@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "turbo": "turbo",
+    "build:one": "turbo run build --scope='rs' --scope='shared-two' --scope='shared'",
+    "build:two": "turbo run build --scope='rstwo' --scope='shared-two' --scope='shared'",
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "dev:one": "turbo run build",
+    "dev:two": "",
+    "setup": "yarn clean && yarn",
+    "clean": "rm -rf node_modules && yarn --cwd apps/rs clean && yarn --cwd apps/rstwo clean && yarn --cwd packages/shared clean",
+    "lint": "turbo run lint",
+    "test": "turbo run test"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.3",
+    "@testing-library/user-event": "^13.5.0",
+    "babel-jest": "^27.5.1",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "customize-cra": "^1.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.5.1",
+    "react-app-rewired": "^2.2.1",
+    "react-scripts": "5.0.0",
+    "turbo": "1.2.5"
+  },
+  "packageManager": "yarn@1.22.17"
+}

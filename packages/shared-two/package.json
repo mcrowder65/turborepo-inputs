@@ -1,0 +1,22 @@
+{
+  "name": "shared-two",
+  "version": "1.0.0",
+  "main": "lib",
+  "files": [
+    "lib/**/*"
+  ],
+  "module": "lib",
+  "author": "Matt Crowder",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf build",
+    "build": "babel src --out-dir lib",
+    "dev": "babel --watch src --out-dir lib",
+    "test": "jest"
+  },
+  "dependencies": {
+    "shortid": "^2.2.16"
+  },
+  "devDependencies": {}
+}
