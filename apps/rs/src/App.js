@@ -6,7 +6,6 @@ const { func } = require("src/func")
 const Page = React.lazy(() => import("src/page"))
 
 function App() {
-  console.log(func())
   const [count, setCount] = React.useState(0)
   useDidUpdate(count, (prevCount) => console.log({ count, prevCount }))
   logger("hello")

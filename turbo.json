@@ -2,6 +2,9 @@
   "baseBranch": "origin/main",
   "pipeline": {
     "build": {
+      "inputs": [
+        "src/!(*.test).js"
+      ],
       "dependsOn": ["^build"],
       "outputs": [".next/**", "build/**"]
     },

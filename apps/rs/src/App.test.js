@@ -7,5 +7,4 @@ test("renders app one", async () => {
   console.log("hi")
   expect(screen.getByText(/click me/i)).toBeInTheDocument()
   await screen.findByText(/I am the page!/i)
-  console.log("hello")
 })
